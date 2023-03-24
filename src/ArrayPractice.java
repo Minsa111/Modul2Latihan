@@ -1,14 +1,25 @@
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.LinkedList;
 
 public class ArrayPractice {
     public static void main(String[] args) {
-        ArrayList<String> animals = new ArrayList<>( Arrays.asList( "Sapi", "Kelinci", "Kambing", "Unta", "Domba" ) );
+        LinkedList<String> animals = new LinkedList<>();
+        animals.add( "Sapi" );
+        animals.add("Kelinci");
+        animals.add("Kambing");
+        animals.add("Unta");
+        animals.add("Domba");
         System.out.println( "\nAnimals: " + animals );
 
-        System.out.println( "Animals to delete:\n[Kelinci, Kambing, Unta]\n" );
-        animals.removeAll( Arrays.asList( "Kelinci", "Kambing", "Unta" ) );
+        LinkedList<String> animalstoDelete = new LinkedList<>();
+        animalstoDelete.add( "Kelinci" );
+        animalstoDelete.add("Kambing");
+        animalstoDelete.add("Unta");
 
+        System.out.println( "Animals to delete:\n" );
+        System.out.println(animalstoDelete);
+        for(String data: animalstoDelete){
+            animals.remove(data);
+        }
         System.out.println( "result: "+animals );
     }
 }
